@@ -172,6 +172,21 @@
     messagingSenderId: "577502331455"
   };
   firebase.initializeApp(config);
+  
+  function saveToFirebase(email) {
+    var emailObject = {
+        email: email
+    };
+
+    firebase.database().ref('subscription-entries').push().set(emailObject)
+        .then(function(snapshot) {
+            console.log(success);
+        }, function(error) {
+            console.log('error' + error);
+        });
+}
+
+saveToFirebase(email);
 </script>
   <script src="js/bootstrap.js"></script>
   <script src="jquery.min.js"></script>
