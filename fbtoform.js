@@ -19,10 +19,12 @@ _setFormData = function setFormData (sel, data) {
 var _fb;
 var fbToForm = function fbToForm (key, sel) {
     var config = config || {
-        apiKey: "<REPLACE ME>",
-        authDomain: "<REPLACE ME>",
-        databaseURL: "<REPLACE ME>",
-        storageBucket: "<REPLACE ME>",
+        apiKey: "AIzaSyDJQJqHjkyOct0LWok8T5W4kUPI4IeJyLQ",
+          authDomain: "aima-website-8.firebaseapp.com",
+          databaseURL: "https://aima-website-8.firebaseio.com",
+          projectId: "aima-website-8",
+          storageBucket: "",
+          messagingSenderId: "577502331455"
     };
     _fb = _fb && _fb.name === "fbToForm" ? _fb : firebase.initializeApp(config, "fbToForm");
     _fb.database().ref('user-data/' + key).on('value', function(snapshot) {
